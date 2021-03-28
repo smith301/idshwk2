@@ -1,0 +1,2 @@
+alert tcp any any -> any 3399 (pcre: "m/login|Initial/"; flowbits: set, is_target; flowbits: noalert; sid: 571172;)
+alert tcp any any -> any 3399 (pcre: "m/(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5]):(6[0-5][0-5][0-3][0-5]|[1-5]\d{4}|\d{1,4})/"; flowbits: isset, is_target; msg: "bot founded"; sid: 1000001;)
